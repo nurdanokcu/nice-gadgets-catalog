@@ -1,0 +1,17 @@
+.icon {
+  width: 16px;
+	height: 16px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: inline-block;
+  cursor: pointer;
+  color:  black;
+
+  &-fav {
+    background-image: url(/icons/favourites.svg);
+  }
+
+  &-cart {
+    background-image: url(/icons/cart.svg);
+  }
+}

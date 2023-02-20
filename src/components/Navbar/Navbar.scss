@@ -1,0 +1,103 @@
+@import '../../utils/mixins';
+@import '../../utils/variables';
+
+.Header {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  box-shadow: 0px 1px 0px $colorElements;
+
+  @include onLarge {
+    height: 64px;
+  }
+
+  &__logo {
+    height: 22px;
+    margin:  0 16px;
+
+    @include onLarge {
+      height: 28px;
+      margin: 0 40px 0 24px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      border-bottom: 3px solid transparent;
+      box-shadow: -1px 0px 0px $colorElements;
+      transition: all 0.3s ease;
+
+      @include onLarge {
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+}
+
+.Nav{
+  &__list {
+    list-style: none;
+    display: flex;
+    gap: 16px ;
+
+    @include onLarge {
+      gap: 48px;
+    }
+  }
+
+  &__item {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+
+    height: 48px;
+    
+    color: $colorSecondary;
+    text-decoration: none;
+    white-space: nowrap;
+    font-family: inherit;
+    font-size: 12px ;
+    font-weight: 800;
+    font-style: normal;
+    line-height: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 3px solid transparent;
+  
+    transition: all 0.3s ease;
+
+    @include onLarge {
+      height: 64px;
+    }
+
+  }
+}
+
+.active {
+  color: $colorPrimary;
+  border-bottom: 3px solid $colorPrimary;
+}
+
