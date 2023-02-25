@@ -5,18 +5,18 @@
 }
 
 @mixin onMedium {
-  @media (min-width:640px) {
+  @media (min-width: 640px) {
     @content;
   }
 }
 @mixin onLarge {
-  @media (min-width:1024px) {
+  @media (min-width: 1024px) {
     @content;
   }
 }
 
 @mixin onXLarge {
-  @media (min-width:1200px) {
+  @media (min-width: 1200px) {
     @content;
   }
 }

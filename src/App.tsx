@@ -1,16 +1,15 @@
-import {
-  Navigate, Route, Routes,
-} from 'react-router-dom';
-import { Footer } from './components/Footer';
+import React from 'react'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import { Footer } from './components/Footer'
 import { Navbar } from './components/Navbar'
-import { CartPage } from './pages/CartPage';
-import { Favorites } from './pages/FavoritesPage';
-import { Homepage } from './pages/HomePage';
-import { NotFoundPage } from './pages/NotFoundPage';
-import { ProductDetailsPage } from './pages/ProductDetailsPage';
-import { ProductsList } from './pages/ProductsList';
+import { CartPage } from './pages/CartPage'
+import { Favorites } from './pages/FavoritesPage'
+import { Homepage } from './pages/HomePage'
+import { NotFoundPage } from './pages/NotFoundPage'
+import { ProductDetailsPage } from './pages/ProductDetailsPage'
+import { ProductsList } from './pages/ProductsList'
 
-export const App = () => {
+export const App: React.FC = () => {
   return (
     <div className="App">
       <Navbar />
@@ -20,10 +19,7 @@ export const App = () => {
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/products">
           <Route path="phones" element={<ProductsList category="phones" />} />
-          <Route
-            path="tablets"
-            element={<ProductsList category="tablets" />}
-          />
+          <Route path="tablets" element={<ProductsList category="tablets" />} />
           <Route
             path="accessories"
             element={<ProductsList category="accessories" />}

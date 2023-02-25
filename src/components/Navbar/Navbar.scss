@@ -4,13 +4,14 @@
 .Header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 48px;
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-
+  box-sizing: border-box;
   box-shadow: 0px 1px 0px $colorElements;
+
+  @include onMedium {
+    display: flex;
+  }
 
   @include onLarge {
     height: 64px;
@@ -18,7 +19,7 @@
 
   &__logo {
     height: 22px;
-    margin:  0 16px;
+    margin: 0 16px;
 
     @include onLarge {
       height: 28px;
@@ -28,38 +29,96 @@
 
   &__actions {
     display: flex;
-    justify-content: flex-end;
-    flex: 1;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+    position: fixed;
+    bottom: 0;
+    height: 64px;
+    width: 100%;
+    border: 1px solid #e2e6e9;
+
+    @include onMedium {
+      position: static;
+
+      display: flex;
+      justify-content: flex-end;
+      box-sizing: border-box;
+      align-items: center;
+
+      height: 100%;
+      width: auto;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
 
     &__button {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 48px;
-      height: 48px;
+      flex-grow: 1;
+
       border-bottom: 3px solid transparent;
+      box-sizing: border-box;
       box-shadow: -1px 0px 0px $colorElements;
+
       transition: all 0.3s ease;
+
+      @include onMedium {
+        width: 48px;
+        height: 48px;
+      }
 
       @include onLarge {
         width: 64px;
         height: 64px;
       }
+
+      @include hover(color, $colorPrimary);
     }
   }
 }
 
-.Nav{
-  &__list {
-    list-style: none;
-    display: flex;
-    gap: 16px ;
+.Nav {
+  position: fixed;
+  top: var(--header-top-height);
+  left: 0;
+  right: 0;
 
-    @include onLarge {
-      gap: 48px;
+  transform: translateX(100%);
+
+  height: calc(100vh - var(--header-top-height));
+  background-color: #fff;
+  box-shadow: 0px 0px 0px 1px $colorElements;
+  z-index: 2;
+
+  transition: transform 0.3s;
+
+  &--active {
+    transform: translateX(0);
+  }
+
+  @include onMedium {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    height: 48px;
+    box-shadow: none;
+    transform: none;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+    gap: 16px;
+
+    @include onMedium {
+      position: static;
+      display: flex;
+      margin-top: 0;
+      flex-direction: row;
     }
   }
 
@@ -74,25 +133,28 @@
     padding: 0 8px;
 
     height: 48px;
-    
+    width: fit-content;
+
     color: $colorSecondary;
     text-decoration: none;
     white-space: nowrap;
     font-family: inherit;
-    font-size: 12px ;
+    font-size: 12px;
     font-weight: 800;
     font-style: normal;
     line-height: 11px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+    box-sizing: border-box;
     border-bottom: 3px solid transparent;
-  
+
     transition: all 0.3s ease;
 
     @include onLarge {
       height: 64px;
     }
 
+    @include hover(color, $colorPrimary);
   }
 }
 
@@ -101,3 +163,20 @@
   border-bottom: 3px solid $colorPrimary;
 }
 
+.menu__buttons {
+  width: 48px;
+  height: 48px;
+  display: none;
+
+  box-shadow: -1px 0px 0px #e2e6e9;
+
+  &--active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include onMedium {
+    display: none;
+  }
+}

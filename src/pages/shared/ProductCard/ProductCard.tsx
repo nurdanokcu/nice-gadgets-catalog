@@ -1,5 +1,3 @@
 export const ProductCard = () => {
-  return (
-    <div>ProductCard</div>
-  );
-};
+  return <div>ProductCard</div>
+}

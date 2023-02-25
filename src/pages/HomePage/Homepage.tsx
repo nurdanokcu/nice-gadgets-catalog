@@ -1,5 +1,3 @@
 export const Homepage: React.FC = () => {
-  return (
-    <div>Homepage</div>
-  );
-};
+  return <div>Homepage</div>
+}

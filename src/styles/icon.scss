@@ -1,17 +1,25 @@
 .icon {
   width: 16px;
-	height: 16px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	display: inline-block;
+  height: 16px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
   cursor: pointer;
-  color:  black;
+  color: $colorSecondary;
 
   &-fav {
-    background-image: url(/icons/favourites.svg);
+    background-image: url(images/icons/favourites.svg);
   }
 
   &-cart {
-    background-image: url(/icons/cart.svg);
+    background-image: url(images/icons/cart.svg);
+  }
+
+  &-close {
+    background-image: url(images/icons/close.svg);
+  }
+
+  &-menu {
+    background-image: url(images/icons/menu.svg);
   }
 }
